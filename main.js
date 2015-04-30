@@ -41,11 +41,11 @@ var fpsCount = 0;
 var fpsTime = 0;
 
 // load an image to draw
-var chuckNorris = document.createElement("img");
-chuckNorris.src = "assets/hero.png";
 
 var player = new Player();
 var keyboard = new Keyboard();
+var enemy = new Enemy();
+
 function run()
 {
 	context.fillStyle = "#ccc";		
@@ -55,6 +55,8 @@ function run()
 	
 	player.update(deltaTime);
 	player.draw();
+	enemy.update(deltaTime);
+	enemy.draw();
 		
 	// update the frame counter 
 	fpsTime += deltaTime;
