@@ -87,6 +87,7 @@ function run()
 	
 	var deltaTime = getDeltaTime();
 	
+	drawMap();
 	player.update(deltaTime);
 	player.draw();
 	enemy.update(deltaTime);
