@@ -1,5 +1,6 @@
-dinosaur sprites by Wyverii - http://opengameart.org/content/unsealed-terrex
+Tileset and slime by Kenney
+Music by Strat Kat
+http://open.commonly.cc/
 
-grass tileset by surt - http://opengameart.org/content/generic-platformer-tiles
-
-various edits by me
+sound effects made with bfxr
+http://www.bfxr.net/

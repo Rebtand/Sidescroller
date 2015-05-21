@@ -12,7 +12,7 @@ Enemy.prototype.update = function(deltaTime)
 	if( typeof(this.rotation) == "undefined" )
 	this.rotation = 0;
 	
-	if(keyboard.isKeyDown(keyboard.KEY_SPACE) == true)
+	if(keyboard.isKeyDown(keyboard.KEY_SPACE) === true)
 	{
 		this.rotation -= deltaTime;
 	}
@@ -20,7 +20,7 @@ Enemy.prototype.update = function(deltaTime)
 	{
 		this.rotation += deltaTime;
 	}
-}
+};
 
 Enemy.prototype.draw = function()
 {
@@ -29,4 +29,4 @@ Enemy.prototype.draw = function()
 	context.rotate(this.rotation);
 	context.drawImage(this.image, -this.width/2, -this.height/2);
 	context.restore();
-}
+};
