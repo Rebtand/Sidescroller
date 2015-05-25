@@ -39,6 +39,7 @@ var Player = function() {
 	
 	this.position = new Vector2();
 	this.position.set( 2 * TILE, -TILE );
+    this.defaultpos = new Vector2( 2 * TILE, -TILE );
 	
 	this.width = 159;
 	this.height = 163;
@@ -52,7 +53,10 @@ var Player = function() {
 	this.direction = RIGHT;
     
     this.cooldownTimer = 0;
+    
+    this.isAlive = true;
 };
+
 
 Player.prototype.update = function(deltaTime)
 {
@@ -96,8 +100,20 @@ Player.prototype.update = function(deltaTime)
 	
 
     if(keyboard.isKeyDown(keyboard.KEY_SPACE) == true && this.cooldownTimer <= 0){
-        sfxFire.play();
-        this.cooldownTimer=0.3;
+        if(this.direction == LEFT)
+		{
+			this.sprite.setAnimation(ANIM_SHOOT_LEFT);
+			sfxFire.play();
+			this.cooldownTimer = 0.3;
+			bullets.push(new Bullet(this.position.x - 70, this.position.y + 5, this.direction));
+		}
+		if(this.direction == RIGHT)
+		{
+			this.sprite.setAnimation(ANIM_SHOOT_RIGHT);
+			sfxFire.play();
+			this.cooldownTimer = 0.3;
+			bullets.push(new Bullet(this.position.x + 70, this.position.y + 5, this.direction));
+		}
     }
     if(this.cooldownTimer > 0)
     {
@@ -182,6 +198,13 @@ Player.prototype.update = function(deltaTime)
 		}
 	}
 	this.falling = ! (celldown || (nx && celldiag));
+    
+    
+    if(this.position.y > (SCREEN_HEIGHT + this.height)) {
+        this.isAlive = false;
+    }
+
+    
 };
 
 Player.prototype.draw = function()
