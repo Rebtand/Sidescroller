@@ -5,7 +5,7 @@ http://open.commonly.cc/
 Game over music by JackySmiles
 http://www.newgrounds.com/audio/listen/513400
 
-win music by Grégoire Lourme
+win music by GrÃ©goire Lourme
 http://opengameart.org/content/commando-team-action-loop-cut
 
 
@@ -15,7 +15,7 @@ http://opengameart.org/content/side-blaster-gfx-m484-games
 camo texture by skorpio
 http://opengameart.org/node/9005
 
-retro sound effects made with bfxr
+sound effects made with bfxr
 http://www.bfxr.net/
 
 various edits by me
